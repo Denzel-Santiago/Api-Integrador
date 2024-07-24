@@ -1,5 +1,5 @@
 
-# API para tienda (Práctica)
+# API para urban-route-explorer
 
 API desarrollada en express con Typescript como ejemplo para clase de fundamento de base de datos.
 
@@ -17,11 +17,11 @@ DB_HOST=localhost
 
 DB_PORT=3306
 
-DB_USER=pedro
+DB_USER=denzel
 
-DB_PASSWORD=1234
+DB_PASSWORD=Desz117s
 
-DB_NAME=tienda_familiar
+DB_NAME=urban-router-explorer
 
 PORT=8000
 
