@@ -25,6 +25,9 @@ DB_NAME=tienda_familiar
 
 PORT=8000
 
+//uYRm2oYz8vIcI6Sn1V/8tPjM3dZrGv5L
+
+
 # Construcción de base de datos
 
 create database tienda_familiar;
@@ -41,7 +44,7 @@ updated_by varchar(50),
 deleted boolean DEFAULT FALSE
 );
 create table role_employee (
-role_id int primary key AUTO_INCREMENT,
+role_id  
 title varchar(50) NOT NULL,
 description text,
 created_at datetime NOT NULL,
@@ -60,4 +63,4 @@ updated_at datetime NOT NULL,
 updated_by varchar(50),
 deleted boolean DEFAULT FALSE,
 foreign key(role_id_fk) references role_employee(role_id)
-);
+);  

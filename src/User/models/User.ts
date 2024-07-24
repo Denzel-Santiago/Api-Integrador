@@ -1,11 +1,14 @@
-export interface Employee{
-    employee_id: number;
+export interface User {
+    user_id: number;
     full_name: string;
+    role_id: number;
     password: string;
-    role_id_fk: number;
+    email: string;
+    phone: string;
     created_at: String;
     created_by: string;
     updated_at: String;
     updated_by: string;
     deleted: boolean;
-}
+  }
+  
