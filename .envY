@@ -1,0 +1,17 @@
+DB_HOST= 54.236.158.140
+
+DB_PORT = 3306
+
+DB_USER = denzel
+
+DB_PASSWORD = Desz117s
+
+DB_NAME = urban_router_explorer
+
+PORT = 8000
+
+JWT_SECRET = secretdoor
+
+API_KEY = ultrasecretdoor
+
+SECRET = 9f4b1f29c7a6e7e1e01caa3e1e8e4f57ddc7d6f8b5e6a9b2e6f3d5e7c8a2f5d1
