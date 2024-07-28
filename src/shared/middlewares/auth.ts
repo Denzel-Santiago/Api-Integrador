@@ -2,7 +2,7 @@ import { Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import { UserRepository } from '../../User/repositories/UserRepository';
-import { UserPayload } from '../config/types/UserPayLoad';
+import { UserPayLoad } from '../config/types/UserPayLoad';
 import { AuthRequest } from '../config/types/authRequest';
 
 dotenv.config();
@@ -17,7 +17,7 @@ export const authMiddleware = async (req: AuthRequest, res: Response, next: Next
   }
 
   try {
-    const payload = jwt.verify(token, secretKey) as UserPayload;
+    const payload = jwt.verify(token, secretKey) as UserPayLoad;
     const conductor = await UserRepository.findById(payload.role_id);
 
     if (!conductor) {

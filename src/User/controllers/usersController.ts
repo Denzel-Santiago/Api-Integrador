@@ -1,5 +1,9 @@
 import { Request, Response } from 'express';
 import { UserService } from '../services/usersService';
+import jwt from 'jsonwebtoken';
+import { UserPayLoad } from '../../shared/config/types/UserPayLoad';
+
+const secretKey = process.env.SECRET || "";
 
 export const loginUser = async (req: Request, res: Response) => {
   const { full_name, password } = req.body;
@@ -7,15 +11,21 @@ export const loginUser = async (req: Request, res: Response) => {
     const token = await UserService.login(full_name, password);
 
     if (!token) {
-      res.status(401).json({ message: 'Invalid full name or password' });
-    } else {
-      res.status(200).json({ token });
+      return res.status(401).json({ message: 'Invalid full name or password' });
     }
+
+    const user = jwt.verify(token, secretKey) as UserPayLoad;
+    res.setHeader('Authorization', token);
+    res.setHeader('Access-Control-Expose-Headers', 'Authorization');
+
+    return res.status(200).json({ token, user });
+
   } catch (error) {
     console.error('Login error:', error);
-    res.status(500).json({ message: 'Internal server error' });
+    return res.status(500).json({ message: 'Internal server error' });
   }
-}
+};
+
 
 export const getUsers = async (_req: Request, res: Response) => {
   try {
