@@ -1,6 +1,7 @@
 import express, { Application } from 'express';
 import bodyParser from 'body-parser';
 import * as dotenv from 'dotenv';
+import cors from 'cors'; // Importar cors
 
 // Importar rutas de módulos
 import rolRoutes from './rol/routes/rolRoutes';
@@ -36,6 +37,7 @@ app.use('/api/reporte',reporteRoutes);
 app.use('/api/tarifa',tarifaRoutes);
 app.use('/api/urban',urbanRoutes);
 app.use('/api/viaje',viajeRoutes);
+app.use(cors())
 // Middleware para manejar rutas no encontradas
 app.use(notFoundHandler);
 
