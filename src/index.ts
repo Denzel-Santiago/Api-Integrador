@@ -28,6 +28,9 @@ const port: number = parseInt(process.env.PORT as string, 10);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//HABILITAR CORS
+app.use(cors());
+
 // Rutas de los módulos
 //app.use('/api/employee', employeeRoutes);
 app.use('/api/user', userRoutes);
@@ -37,7 +40,7 @@ app.use('/api/reporte',reporteRoutes);
 app.use('/api/tarifa',tarifaRoutes);
 app.use('/api/urban',urbanRoutes);
 app.use('/api/viaje',viajeRoutes);
-app.use(cors())
+
 // Middleware para manejar rutas no encontradas
 app.use(notFoundHandler);
 
