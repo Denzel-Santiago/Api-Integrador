@@ -1,7 +1,7 @@
 import express, { Application } from 'express';
 import bodyParser from 'body-parser';
 import * as dotenv from 'dotenv';
-import cors from 'cors'; // Importar cors
+import cors from 'cors';
 
 // Importar rutas de módulos
 import rolRoutes from './rol/routes/rolRoutes';
